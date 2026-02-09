@@ -1,0 +1,62 @@
+{
+  "header": {
+    "title": "Lov na letove",
+    "subtitle": "Pronađite najbolje ponude letova iz Beograda"
+  },
+  "search": {
+    "origin": "Polazište (npr. BEG)",
+    "destination": "Odredište (opciono)",
+    "noAirports": "Nije pronađen aerodrom.",
+    "sortBy": "Sortiraj po",
+    "maxTripDays": "Maks. dana putovanja (npr. 14)",
+    "selectDates": "Izaberite datume putovanja (polazak - povratak)",
+    "searchButton": "Pretraži letove",
+    "sorting": {
+      "priceAsc": "Cena: Od najniže",
+      "priceDesc": "Cena: Od najviše",
+      "departureDateAsc": "Polazak: Najranije",
+      "departureDateDesc": "Polazak: Najkasnije"
+    }
+  },
+  "history": {
+    "title": "Nedavne pretrage",
+    "clearAll": "Obriši sve"
+  },
+  "flights": {
+    "loading": "Učitavanje letova...",
+    "noResults": "Nema pronađenih letova",
+    "noResultsDesc": "Pokušajte da prilagodite filtere pretrage kako biste pronašli više rezultata.",
+    "showing": "Prikazano",
+    "flights": "letova",
+    "loadMore": "Učitaj još letova",
+    "loading": "Učitavanje...",
+    "from": "Od",
+    "to": "Do",
+    "outbound": "Polazak",
+    "return": "Povratak",
+    "totalPrice": "Ukupna cena",
+    "bookNow": "Rezerviši",
+    "day": "dan",
+    "days": "dana",
+    "trip": "putovanje"
+  },
+  "error": {
+    "loadingFlights": "Greška pri učitavanju letova",
+    "occurred": "Došlo je do greške"
+  },
+  "footer": {
+    "disclaimer": "*Prikazane cene su pronađene u poslednjih 48 sati i možda više nisu važeće u vreme rezervacije. Mogu se primeniti dodatne naknade i troškovi za opcione usluge.",
+    "copyright": "Lov na letove © 2026"
+  },
+  "theme": {
+    "switchTo": "Prebaci na {{mode}} režim",
+    "dark": "tamni",
+    "light": "svetli",
+    "darkLabel": "Tamno",
+    "lightLabel": "Svetlo"
+  },
+  "viewMode": {
+    "grid": "Prikaz kao mreža",
+    "list": "Prikaz kao lista"
+  }
+}

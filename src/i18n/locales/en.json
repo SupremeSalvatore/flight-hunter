@@ -1,0 +1,62 @@
+{
+  "header": {
+    "title": "Flight Hunter",
+    "subtitle": "Find the best flight deals from Belgrade"
+  },
+  "search": {
+    "origin": "Origin (e.g., BEG)",
+    "destination": "Destination (optional)",
+    "noAirports": "No airports found.",
+    "sortBy": "Sort by",
+    "maxTripDays": "Max trip days (e.g., 14)",
+    "selectDates": "Select travel dates (departure - return)",
+    "searchButton": "Search Flights",
+    "sorting": {
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "departureDateAsc": "Departure: Earliest",
+      "departureDateDesc": "Departure: Latest"
+    }
+  },
+  "history": {
+    "title": "Recent Searches",
+    "clearAll": "Clear All"
+  },
+  "flights": {
+    "loading": "Loading flights...",
+    "noResults": "No Flights Found",
+    "noResultsDesc": "Try adjusting your search filters to find more results.",
+    "showing": "Showing",
+    "flights": "flights",
+    "loadMore": "Load More Flights",
+    "loading": "Loading...",
+    "from": "From",
+    "to": "To",
+    "outbound": "Outbound",
+    "return": "Return",
+    "totalPrice": "Total Price",
+    "bookNow": "Book Now",
+    "day": "day",
+    "days": "days",
+    "trip": "trip"
+  },
+  "error": {
+    "loadingFlights": "Error loading flights",
+    "occurred": "An error occurred"
+  },
+  "footer": {
+    "disclaimer": "*Prices shown were found in the last 48 hours and may no longer be valid at time of booking. Additional fees and charges for optional services may apply.",
+    "copyright": "Flight Hunter © 2026"
+  },
+  "theme": {
+    "switchTo": "Switch to {{mode}} mode",
+    "dark": "dark",
+    "light": "light",
+    "darkLabel": "Dark",
+    "lightLabel": "Light"
+  },
+  "viewMode": {
+    "grid": "Grid View",
+    "list": "List View"
+  }
+}
