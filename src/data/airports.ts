@@ -8,19 +8,228 @@ export interface Airport {
 }
 
 export const airports: Airport[] = [
+  // Top European Holiday Destinations
+  {
+    geoId: '3115882',
+    value: 'BCN',
+    label: 'Barselona (BCN)',
+    countryIsoCode: 'ES',
+    cityName: 'Barselona',
+    imageUrl:
+      'https://assets.airtrfx.com/media-em/ju/67054438dd9f6_barcelona_1500x500_1.jpg'
+  },
+  {
+    geoId: '6269554',
+    value: 'CDG',
+    label: 'Pariz (CDG)',
+    countryIsoCode: 'FR',
+    cityName: 'Pariz'
+  },
+  {
+    geoId: '6299619',
+    value: 'FCO',
+    label: 'Rim (FCO)',
+    countryIsoCode: 'IT',
+    cityName: 'Rim'
+  },
+  {
+    geoId: '2647216',
+    value: 'LHR',
+    label: 'London (LHR)',
+    countryIsoCode: 'GB',
+    cityName: 'London'
+  },
+  {
+    geoId: '6296680',
+    value: 'AMS',
+    label: 'Amsterdam (AMS)',
+    countryIsoCode: 'NL',
+    cityName: 'Amsterdam'
+  },
+  {
+    geoId: '6299484',
+    value: 'ATH',
+    label: 'Atina (ATH)',
+    countryIsoCode: 'GR',
+    cityName: 'Atina'
+  },
+  {
+    geoId: '6301792',
+    value: 'LIS',
+    label: 'Lisabon (LIS)',
+    countryIsoCode: 'PT',
+    cityName: 'Lisabon'
+  },
+  {
+    geoId: '3219415',
+    value: 'VCE',
+    label: 'Venecija (VCE)',
+    countryIsoCode: 'IT',
+    cityName: 'Venecija'
+  },
+  {
+    geoId: '6299654',
+    value: 'PRG',
+    label: 'Prag (PRG)',
+    countryIsoCode: 'CZ',
+    cityName: 'Prag'
+  },
+  {
+    geoId: '6299314',
+    value: 'DBV',
+    label: 'Dubrovnik (DBV)',
+    countryIsoCode: 'HR',
+    cityName: 'Dubrovnik'
+  },
+  {
+    geoId: '6299511',
+    value: 'JTR',
+    label: 'Santorini (JTR)',
+    countryIsoCode: 'GR',
+    cityName: 'Santorini'
+  },
+  {
+    geoId: '6299743',
+    value: 'IST',
+    label: 'Istanbul (IST)',
+    countryIsoCode: 'TR',
+    cityName: 'Istanbul'
+  },
+  {
+    geoId: '3215304',
+    value: 'SPU',
+    label: 'Split (SPU)',
+    countryIsoCode: 'HR',
+    cityName: 'Split'
+  },
+  {
+    geoId: '2761335',
+    value: 'VIE',
+    label: 'Beč (VIE)',
+    countryIsoCode: 'AT',
+    cityName: 'Beč'
+  },
+  {
+    geoId: '6299345',
+    value: 'MAD',
+    label: 'Madrid (MAD)',
+    countryIsoCode: 'ES',
+    cityName: 'Madrid'
+  },
+  {
+    geoId: '3174133',
+    value: 'MXP',
+    label: 'Milano (MXP)',
+    countryIsoCode: 'IT',
+    cityName: 'Milano'
+  },
+  {
+    geoId: '6299729',
+    value: 'AYT',
+    label: 'Antalija (AYT)',
+    countryIsoCode: 'TR',
+    cityName: 'Antalija'
+  },
+  {
+    geoId: '6299346',
+    value: 'AGP',
+    label: 'Malaga (AGP)',
+    countryIsoCode: 'ES',
+    cityName: 'Malaga'
+  },
+  {
+    geoId: '6299349',
+    value: 'PMI',
+    label: 'Majorka (PMI)',
+    countryIsoCode: 'ES',
+    cityName: 'Majorka'
+  },
+  {
+    geoId: '6299418',
+    value: 'NCE',
+    label: 'Nica (NCE)',
+    countryIsoCode: 'FR',
+    cityName: 'Nica'
+  },
+  {
+    geoId: '6299339',
+    value: 'IBZ',
+    label: 'Ibica (IBZ)',
+    countryIsoCode: 'ES',
+    cityName: 'Ibica'
+  },
+  {
+    geoId: '6299495',
+    value: 'CFU',
+    label: 'Krf (CFU)',
+    countryIsoCode: 'GR',
+    cityName: 'Krf'
+  },
+  {
+    geoId: '6299500',
+    value: 'JMK',
+    label: 'Mikonos (JMK)',
+    countryIsoCode: 'GR',
+    cityName: 'Mikonos'
+  },
+  {
+    geoId: '6301777',
+    value: 'RHO',
+    label: 'Rodos (RHO)',
+    countryIsoCode: 'GR',
+    cityName: 'Rodos'
+  },
+  {
+    geoId: '6299488',
+    value: 'HER',
+    label: 'Iraklion (Krit) (HER)',
+    countryIsoCode: 'GR',
+    cityName: 'Iraklion'
+  },
+  {
+    geoId: '2562787',
+    value: 'MLA',
+    label: 'Malta (MLA)',
+    countryIsoCode: 'MT',
+    cityName: 'Malta'
+  },
+  {
+    geoId: '6299688',
+    value: 'OPO',
+    label: 'Porto (OPO)',
+    countryIsoCode: 'PT',
+    cityName: 'Porto'
+  },
+  {
+    geoId: '414646',
+    value: 'LCA',
+    label: 'Larnaka (LCA)',
+    countryIsoCode: 'CY',
+    cityName: 'Larnaka',
+    imageUrl: 'https://assets.airtrfx.com/media-em/ju/cities/LCA_Larnaca.jpg'
+  },
+  {
+    geoId: '6299771',
+    value: 'BJV',
+    label: 'Bodrum (BJV)',
+    countryIsoCode: 'TR',
+    cityName: 'Bodrum'
+  },
+  {
+    geoId: '6296627',
+    value: 'EDI',
+    label: 'Edinburg (EDI)',
+    countryIsoCode: 'GB',
+    cityName: 'Edinburg'
+  },
+
+  // Other European Destinations (Alphabetically)
   {
     geoId: '6296624',
     value: 'ABZ',
     label: 'Aberdin (ABZ)',
     countryIsoCode: 'GB',
     cityName: 'Aberdin'
-  },
-  {
-    geoId: '6300092',
-    value: 'AUH',
-    label: 'Abu Dabi (AUH)',
-    countryIsoCode: 'AE',
-    cityName: 'Abu Dabi'
   },
   {
     geoId: '12719918',
@@ -30,11 +239,11 @@ export const airports: Airport[] = [
     cityName: 'Adana'
   },
   {
-    geoId: '6301322',
-    value: 'ADL',
-    label: 'Adelejd (ADL)',
-    countryIsoCode: 'AU',
-    cityName: 'Adelejd'
+    geoId: '6299483',
+    value: 'AXD',
+    label: 'Aleksandropolis (AXD)',
+    countryIsoCode: 'GR',
+    cityName: 'Aleksandropolis'
   },
   {
     geoId: '7668334',
@@ -42,20 +251,6 @@ export const airports: Airport[] = [
     label: 'Alanja (GZP)',
     countryIsoCode: 'TR',
     cityName: 'Alanja'
-  },
-  {
-    geoId: '5454724',
-    value: 'ABQ',
-    label: 'Albukerki (ABQ)',
-    countryIsoCode: 'US',
-    cityName: 'Albukerki'
-  },
-  {
-    geoId: '6299483',
-    value: 'AXD',
-    label: 'Aleksandropolis (AXD)',
-    countryIsoCode: 'GR',
-    cityName: 'Aleksandropolis'
   },
   {
     geoId: '6299565',
@@ -72,32 +267,11 @@ export const airports: Airport[] = [
     cityName: 'Alikante'
   },
   {
-    geoId: '6300913',
-    value: 'ALA',
-    label: 'Almati (ALA)',
-    countryIsoCode: 'KZ',
-    cityName: 'Almati'
-  },
-  {
     geoId: '6296721',
     value: 'ALF',
     label: 'Alta (ALF)',
     countryIsoCode: 'NO',
     cityName: 'Alta'
-  },
-  {
-    geoId: '393598',
-    value: 'AMM',
-    label: 'Aman (AMM)',
-    countryIsoCode: 'JO',
-    cityName: 'Aman'
-  },
-  {
-    geoId: '6296680',
-    value: 'AMS',
-    label: 'Amsterdam (AMS)',
-    countryIsoCode: 'NL',
-    cityName: 'Amsterdam'
   },
   {
     geoId: '6299725',
@@ -107,39 +281,11 @@ export const airports: Airport[] = [
     cityName: 'Ankara'
   },
   {
-    geoId: '6299729',
-    value: 'AYT',
-    label: 'Antalija (AYT)',
-    countryIsoCode: 'TR',
-    cityName: 'Antalija'
-  },
-  {
-    geoId: '6299484',
-    value: 'ATH',
-    label: 'Atina (ATH)',
-    countryIsoCode: 'GR',
-    cityName: 'Atina'
-  },
-  {
-    geoId: '4199556',
-    value: 'ATL',
-    label: 'Atlanta (ATL)',
-    countryIsoCode: 'US',
-    cityName: 'Atlanta'
-  },
-  {
     geoId: '6300924',
     value: 'GYD',
     label: 'Baku (GYD)',
     countryIsoCode: 'AZ',
     cityName: 'Baku'
-  },
-  {
-    geoId: '6301137',
-    value: 'BKK',
-    label: 'Bangkok (BKK)',
-    countryIsoCode: 'TH',
-    cityName: 'Bangkok'
   },
   {
     geoId: '6299693',
@@ -155,15 +301,6 @@ export const airports: Airport[] = [
     countryIsoCode: 'IT',
     cityName: 'Bari',
     imageUrl: 'https://assets.airtrfx.com/media-em/ju/cities/BRI_Bari.jpg'
-  },
-  {
-    geoId: '3115882',
-    value: 'BCN',
-    label: 'Barselona (BCN)',
-    countryIsoCode: 'ES',
-    cityName: 'Barselona',
-    imageUrl:
-      'https://assets.airtrfx.com/media-em/ju/67054438dd9f6_barcelona_1500x500_1.jpg'
   },
   {
     geoId: '6296570',
@@ -194,13 +331,6 @@ export const airports: Airport[] = [
     cityName: 'Berlin'
   },
   {
-    geoId: '2761335',
-    value: 'VIE',
-    label: 'Beč (VIE)',
-    countryIsoCode: 'AT',
-    cityName: 'Beč'
-  },
-  {
     geoId: '6299328',
     value: 'BIO',
     label: 'Bilbao (BIO)',
@@ -222,25 +352,11 @@ export const airports: Airport[] = [
     cityName: 'Bodo'
   },
   {
-    geoId: '6299771',
-    value: 'BJV',
-    label: 'Bodrum (BJV)',
-    countryIsoCode: 'TR',
-    cityName: 'Bodrum'
-  },
-  {
     geoId: '6290247',
     value: 'BLQ',
     label: 'Bolonja (BLQ)',
     countryIsoCode: 'IT',
     cityName: 'Bolonja'
-  },
-  {
-    geoId: '4937646',
-    value: 'BOS',
-    label: 'Boston (BOS)',
-    countryIsoCode: 'US',
-    cityName: 'Boston'
   },
   {
     geoId: '6299542',
@@ -262,13 +378,6 @@ export const airports: Airport[] = [
     label: 'Bristol (BRS)',
     countryIsoCode: 'GB',
     cityName: 'Bristol'
-  },
-  {
-    geoId: '6301292',
-    value: 'BNE',
-    label: 'Brizbejn (BNE)',
-    countryIsoCode: 'AU',
-    cityName: 'Brizbejn'
   },
   {
     geoId: '6299519',
@@ -306,54 +415,12 @@ export const airports: Airport[] = [
     cityName: 'Dalaman'
   },
   {
-    geoId: '4684943',
-    value: 'DFW',
-    label: 'Dalas (DFW)',
-    countryIsoCode: 'US',
-    cityName: 'Dalas'
-  },
-  {
-    geoId: '5419401',
-    value: 'DEN',
-    label: 'Denver (DEN)',
-    countryIsoCode: 'US',
-    cityName: 'Denver'
-  },
-  {
-    geoId: '4990742',
-    value: 'DTW',
-    label: 'Detroit (DTW)',
-    countryIsoCode: 'US',
-    cityName: 'Detroit'
-  },
-  {
     geoId: '3206096',
     value: 'DUS',
     label: 'Diseldorf (DUS)',
     countryIsoCode: 'DE',
     cityName: 'Diseldorf',
     imageUrl: 'https://assets.airtrfx.com/media-em/ju/cities/DUS_Dusseldorf.jpg'
-  },
-  {
-    geoId: '6300133',
-    value: 'DOH',
-    label: 'Doha (DOH)',
-    countryIsoCode: 'QA',
-    cityName: 'Doha'
-  },
-  {
-    geoId: '6299314',
-    value: 'DBV',
-    label: 'Dubrovnik (DBV)',
-    countryIsoCode: 'HR',
-    cityName: 'Dubrovnik'
-  },
-  {
-    geoId: '6296627',
-    value: 'EDI',
-    label: 'Edinburg (EDI)',
-    countryIsoCode: 'GB',
-    cityName: 'Edinburg'
   },
   {
     geoId: '6290293',
@@ -391,46 +458,11 @@ export const airports: Airport[] = [
     cityName: 'Helsinki'
   },
   {
-    geoId: '6301089',
-    value: 'HKG',
-    label: 'Hong Kong (HKG)',
-    countryIsoCode: 'HK',
-    cityName: 'Hong Kong'
-  },
-  {
-    geoId: '6299339',
-    value: 'IBZ',
-    label: 'Ibica (IBZ)',
-    countryIsoCode: 'ES',
-    cityName: 'Ibica'
-  },
-  {
-    geoId: '6299488',
-    value: 'HER',
-    label: 'Iraklion (Krit) (HER)',
-    countryIsoCode: 'GR',
-    cityName: 'Iraklion'
-  },
-  {
-    geoId: '6299743',
-    value: 'IST',
-    label: 'Istanbul (IST)',
-    countryIsoCode: 'TR',
-    cityName: 'Istanbul'
-  },
-  {
     geoId: '6299750',
     value: 'ADB',
     label: 'Izmir (ADB)',
     countryIsoCode: 'TR',
     cityName: 'Izmir'
-  },
-  {
-    geoId: '6297293',
-    value: 'CAI',
-    label: 'Kairo (CAI)',
-    countryIsoCode: 'EG',
-    cityName: 'Kairo'
   },
   {
     geoId: '6290291',
@@ -468,40 +500,11 @@ export const airports: Airport[] = [
     cityName: 'Krakov'
   },
   {
-    geoId: '6299495',
-    value: 'CFU',
-    label: 'Krf (CFU)',
-    countryIsoCode: 'GR',
-    cityName: 'Krf'
-  },
-  {
-    geoId: '414646',
-    value: 'LCA',
-    label: 'Larnaka (LCA)',
-    countryIsoCode: 'CY',
-    cityName: 'Larnaka',
-    imageUrl: 'https://assets.airtrfx.com/media-em/ju/cities/LCA_Larnaca.jpg'
-  },
-  {
-    geoId: '5507974',
-    value: 'LAS',
-    label: 'Las Vegas (LAS)',
-    countryIsoCode: 'US',
-    cityName: 'Las Vegas'
-  },
-  {
     geoId: '6296608',
     value: 'LBA',
     label: 'Lids (LBA)',
     countryIsoCode: 'GB',
     cityName: 'Lids'
-  },
-  {
-    geoId: '6301792',
-    value: 'LIS',
-    label: 'Lisabon (LIS)',
-    countryIsoCode: 'PT',
-    cityName: 'Lisabon'
   },
   {
     geoId: '3215733',
@@ -511,60 +514,11 @@ export const airports: Airport[] = [
     cityName: 'Ljubljana'
   },
   {
-    geoId: '2647216',
-    value: 'LHR',
-    label: 'London (LHR)',
-    countryIsoCode: 'GB',
-    cityName: 'London'
-  },
-  {
-    geoId: '5368418',
-    value: 'LAX',
-    label: 'Los Anđeles (LAX)',
-    countryIsoCode: 'US',
-    cityName: 'Los Anđeles'
-  },
-  {
     geoId: '6296718',
     value: 'LUX',
     label: 'Luksemburg (LUX)',
     countryIsoCode: 'LU',
     cityName: 'Luksemburg'
-  },
-  {
-    geoId: '6299345',
-    value: 'MAD',
-    label: 'Madrid (MAD)',
-    countryIsoCode: 'ES',
-    cityName: 'Madrid'
-  },
-  {
-    geoId: '4164181',
-    value: 'MIA',
-    label: 'Majami (MIA)',
-    countryIsoCode: 'US',
-    cityName: 'Majami'
-  },
-  {
-    geoId: '6299349',
-    value: 'PMI',
-    label: 'Majorka (PMI)',
-    countryIsoCode: 'ES',
-    cityName: 'Majorka'
-  },
-  {
-    geoId: '6299346',
-    value: 'AGP',
-    label: 'Malaga (AGP)',
-    countryIsoCode: 'ES',
-    cityName: 'Malaga'
-  },
-  {
-    geoId: '2562787',
-    value: 'MLA',
-    label: 'Malta (MLA)',
-    countryIsoCode: 'MT',
-    cityName: 'Malta'
   },
   {
     geoId: '6296575',
@@ -581,41 +535,6 @@ export const airports: Airport[] = [
     cityName: 'Marsej'
   },
   {
-    geoId: '6290242',
-    value: 'MEL',
-    label: 'Melburn (MEL)',
-    countryIsoCode: 'AU',
-    cityName: 'Melburn'
-  },
-  {
-    geoId: '6299500',
-    value: 'JMK',
-    label: 'Mikonos (JMK)',
-    countryIsoCode: 'GR',
-    cityName: 'Mikonos'
-  },
-  {
-    geoId: '3174133',
-    value: 'MXP',
-    label: 'Milano (MXP)',
-    countryIsoCode: 'IT',
-    cityName: 'Milano'
-  },
-  {
-    geoId: '5037658',
-    value: 'MSP',
-    label: 'Mineapolis (MSP)',
-    countryIsoCode: 'US',
-    cityName: 'Mineapolis'
-  },
-  {
-    geoId: '6296296',
-    value: 'YUL',
-    label: 'Montreal (YUL)',
-    countryIsoCode: 'CA',
-    cityName: 'Montreal'
-  },
-  {
     geoId: '494811',
     value: 'SVO',
     label: 'Moskva (SVO)',
@@ -630,13 +549,6 @@ export const airports: Airport[] = [
     cityName: 'Napulj'
   },
   {
-    geoId: '6299418',
-    value: 'NCE',
-    label: 'Nica (NCE)',
-    countryIsoCode: 'FR',
-    cityName: 'Nica'
-  },
-  {
     geoId: '6299780',
     value: 'INI',
     label: 'Niš (INI)',
@@ -644,25 +556,11 @@ export const airports: Airport[] = [
     cityName: 'Niš'
   },
   {
-    geoId: '5122732',
-    value: 'JFK',
-    label: 'Njujork (JFK)',
-    countryIsoCode: 'US',
-    cityName: 'Njujork'
-  },
-  {
     geoId: '6299777',
     value: 'OHD',
     label: 'Ohrid (OHD)',
     countryIsoCode: 'MK',
     cityName: 'Ohrid'
-  },
-  {
-    geoId: '4167162',
-    value: 'MCO',
-    label: 'Orlando (MCO)',
-    countryIsoCode: 'US',
-    cityName: 'Orlando'
   },
   {
     geoId: '3156088',
@@ -679,25 +577,11 @@ export const airports: Airport[] = [
     cityName: 'Palermo'
   },
   {
-    geoId: '6269554',
-    value: 'CDG',
-    label: 'Pariz (CDG)',
-    countryIsoCode: 'FR',
-    cityName: 'Pariz'
-  },
-  {
     geoId: '6299503',
     value: 'PAS',
     label: 'Paros (PAS)',
     countryIsoCode: 'GR',
     cityName: 'Paros'
-  },
-  {
-    geoId: '5191803',
-    value: 'PIT',
-    label: 'Pitsburg (PIT)',
-    countryIsoCode: 'US',
-    cityName: 'Pitsburg'
   },
   {
     geoId: '6299781',
@@ -706,20 +590,6 @@ export const airports: Airport[] = [
     countryIsoCode: 'ME',
     cityName: 'Podgorica',
     imageUrl: 'https://assets.airtrfx.com/media-em/ju/cities/TGD_Podgorica.jpg'
-  },
-  {
-    geoId: '6299688',
-    value: 'OPO',
-    label: 'Porto (OPO)',
-    countryIsoCode: 'PT',
-    cityName: 'Porto'
-  },
-  {
-    geoId: '6299654',
-    value: 'PRG',
-    label: 'Prag (PRG)',
-    countryIsoCode: 'CZ',
-    cityName: 'Prag'
   },
   {
     geoId: '6299319',
@@ -743,20 +613,6 @@ export const airports: Airport[] = [
     cityName: 'Rijeka'
   },
   {
-    geoId: '6299619',
-    value: 'FCO',
-    label: 'Rim (FCO)',
-    countryIsoCode: 'IT',
-    cityName: 'Rim'
-  },
-  {
-    geoId: '6301777',
-    value: 'RHO',
-    label: 'Rodos (RHO)',
-    countryIsoCode: 'GR',
-    cityName: 'Rodos'
-  },
-  {
     geoId: '6299671',
     value: 'SZG',
     label: 'Salcburg (SZG)',
@@ -771,39 +627,11 @@ export const airports: Airport[] = [
     cityName: 'Samos'
   },
   {
-    geoId: '5391989',
-    value: 'SFO',
-    label: 'San Francisko (SFO)',
-    countryIsoCode: 'US',
-    cityName: 'San Francisko'
-  },
-  {
-    geoId: '6299511',
-    value: 'JTR',
-    label: 'Santorini (JTR)',
-    countryIsoCode: 'GR',
-    cityName: 'Santorini'
-  },
-  {
     geoId: '6299696',
     value: 'SJJ',
     label: 'Sarajevo (SJJ)',
     countryIsoCode: 'BA',
     cityName: 'Sarajevo'
-  },
-  {
-    geoId: '5809876',
-    value: 'SEA',
-    label: 'Sijetl (SEA)',
-    countryIsoCode: 'US',
-    cityName: 'Sijetl'
-  },
-  {
-    geoId: '1880725',
-    value: 'SIN',
-    label: 'Singapur (SIN)',
-    countryIsoCode: 'SG',
-    cityName: 'Singapur'
   },
   {
     geoId: '6299778',
@@ -825,13 +653,6 @@ export const airports: Airport[] = [
     label: 'Solun (SKG)',
     countryIsoCode: 'GR',
     cityName: 'Solun'
-  },
-  {
-    geoId: '3215304',
-    value: 'SPU',
-    label: 'Split (SPU)',
-    countryIsoCode: 'HR',
-    cityName: 'Split'
   },
   {
     geoId: '2725346',
@@ -870,13 +691,6 @@ export const airports: Airport[] = [
     cityName: 'Torino'
   },
   {
-    geoId: '6296338',
-    value: 'YYZ',
-    label: 'Toronto (YYZ)',
-    countryIsoCode: 'CA',
-    cityName: 'Toronto'
-  },
-  {
     geoId: '3220056',
     value: 'TRS',
     label: 'Trst (TRS)',
@@ -896,13 +710,6 @@ export const airports: Airport[] = [
     label: 'Varšava (WAW)',
     countryIsoCode: 'PL',
     cityName: 'Varšava'
-  },
-  {
-    geoId: '3219415',
-    value: 'VCE',
-    label: 'Venecija (VCE)',
-    countryIsoCode: 'IT',
-    cityName: 'Venecija'
   },
   {
     geoId: '3220360',
