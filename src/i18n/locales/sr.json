@@ -11,6 +11,8 @@
     "maxTripDays": "Maks. dana putovanja (npr. 14)",
     "selectDates": "Izaberite datume putovanja (polazak - povratak)",
     "searchButton": "Pretraži letove",
+    "swapLocations": "Zameni polazište i odredište",
+    "numberOfPassengers": "Putnici",
     "sorting": {
       "priceAsc": "Cena: Od najniže",
       "priceDesc": "Cena: Od najviše",
@@ -22,11 +24,15 @@
     "title": "Nedavne pretrage",
     "clearAll": "Obriši sve"
   },
+  "flightPattern": {
+    "available": "Letovi dostupni"
+  },
   "flights": {
     "loading": "Učitavanje letova...",
     "noResults": "Nema pronađenih letova",
     "noResultsDesc": "Pokušajte da prilagodite filtere pretrage kako biste pronašli više rezultata.",
     "showing": "Prikazano",
+    "flight": "let",
     "flights": "letova",
     "loadMore": "Učitaj još letova",
     "loading": "Učitavanje...",

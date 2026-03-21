@@ -60,6 +60,7 @@ export function DateRangePicker({
         <PopoverContent className="w-auto p-0" align="start">
           <Calendar
             mode="range"
+            weekStartsOn={1}
             defaultMonth={dateRange?.from}
             selected={dateRange}
             onSelect={onDateRangeChange}

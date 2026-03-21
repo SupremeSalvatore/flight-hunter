@@ -11,6 +11,8 @@
     "maxTripDays": "Max trip days (e.g., 14)",
     "selectDates": "Select travel dates (departure - return)",
     "searchButton": "Search Flights",
+    "swapLocations": "Swap origin and destination",
+    "numberOfPassengers": "Passengers",
     "sorting": {
       "priceAsc": "Price: Low to High",
       "priceDesc": "Price: High to Low",
@@ -22,11 +24,15 @@
     "title": "Recent Searches",
     "clearAll": "Clear All"
   },
+  "flightPattern": {
+    "available": "Flights available on"
+  },
   "flights": {
     "loading": "Loading flights...",
     "noResults": "No Flights Found",
     "noResultsDesc": "Try adjusting your search filters to find more results.",
     "showing": "Showing",
+    "flight": "flight",
     "flights": "flights",
     "loadMore": "Load More Flights",
     "loading": "Loading...",

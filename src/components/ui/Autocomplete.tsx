@@ -80,6 +80,7 @@ export function Autocomplete({
         break;
       case 'Enter':
         e.preventDefault();
+        e.stopPropagation();
         if (highlightedIndex >= 0 && highlightedIndex < options.length) {
           handleOptionClick(options[highlightedIndex]);
         }

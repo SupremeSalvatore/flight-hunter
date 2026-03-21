@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Check, ChevronsUpDown } from 'lucide-react';
+import { Check, ChevronsUpDown, X } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 export interface ComboboxOption {
@@ -83,6 +83,13 @@ export function Combobox({
     }
   };
 
+  const handleClear = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onChange('', undefined);
+    setSearchQuery('');
+    setHighlightedIndex(-1);
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!isOpen) return;
 
@@ -99,6 +106,7 @@ export function Combobox({
         break;
       case 'Enter':
         e.preventDefault();
+        e.stopPropagation();
         if (highlightedIndex >= 0 && highlightedIndex < options.length) {
           handleSelect(options[highlightedIndex].value);
         }
@@ -126,7 +134,15 @@ export function Combobox({
         <span className="truncate">
           {selectedOption ? selectedOption.label : placeholder}
         </span>
-        <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+        <div className="flex items-center gap-1 ml-2 shrink-0">
+          {value && (
+            <X
+              className="h-4 w-4 opacity-50 hover:opacity-100 transition-opacity"
+              onClick={handleClear}
+            />
+          )}
+          <ChevronsUpDown className="h-4 w-4 opacity-50" />
+        </div>
       </button>
 
       {isOpen && (

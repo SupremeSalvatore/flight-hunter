@@ -39,14 +39,36 @@ export function SearchFilters({
   // Load popular destinations on mount
   useEffect(() => {
     const popularAirports = airports.slice(0, 20);
-    setDestinationOptions(
-      popularAirports.map((airport) => ({
-        value: airport.value,
-        label: airport.label,
-        geoId: airport.geoId
-      }))
-    );
-  }, []);
+    let options = popularAirports.map((airport) => ({
+      value: airport.value,
+      label: airport.label,
+      geoId: airport.geoId
+    }));
+
+    // Add selected destination if not in popular list
+    if (filters.destinationCode) {
+      const isInOptions = options.some(
+        (opt) => opt.value === filters.destinationCode
+      );
+      if (!isInOptions) {
+        const selectedAirport = airports.find(
+          (airport) => airport.value === filters.destinationCode
+        );
+        if (selectedAirport) {
+          options = [
+            {
+              value: selectedAirport.value,
+              label: selectedAirport.label,
+              geoId: selectedAirport.geoId
+            },
+            ...options
+          ];
+        }
+      }
+    }
+
+    setDestinationOptions(options);
+  }, [filters.destinationCode]);
 
   const handleInputChange = (field: keyof SearchFiltersType, value: string) => {
     onFiltersChange({
@@ -71,26 +93,48 @@ export function SearchFilters({
   };
 
   const handleDestinationSearch = (query: string) => {
+    let options: ComboboxOption[] = [];
+
     if (query.length >= 2) {
       const results = searchAirports(query);
-      setDestinationOptions(
-        results.map((airport) => ({
-          value: airport.value,
-          label: airport.label,
-          geoId: airport.geoId
-        }))
-      );
+      options = results.map((airport) => ({
+        value: airport.value,
+        label: airport.label,
+        geoId: airport.geoId
+      }));
     } else {
       // Show popular destinations when query is cleared
       const popularAirports = airports.slice(0, 20);
-      setDestinationOptions(
-        popularAirports.map((airport) => ({
-          value: airport.value,
-          label: airport.label,
-          geoId: airport.geoId
-        }))
-      );
+      options = popularAirports.map((airport) => ({
+        value: airport.value,
+        label: airport.label,
+        geoId: airport.geoId
+      }));
     }
+
+    // Always include selected destination if not in results
+    if (filters.destinationCode) {
+      const isInOptions = options.some(
+        (opt) => opt.value === filters.destinationCode
+      );
+      if (!isInOptions) {
+        const selectedAirport = airports.find(
+          (airport) => airport.value === filters.destinationCode
+        );
+        if (selectedAirport) {
+          options = [
+            {
+              value: selectedAirport.value,
+              label: selectedAirport.label,
+              geoId: selectedAirport.geoId
+            },
+            ...options
+          ];
+        }
+      }
+    }
+
+    setDestinationOptions(options);
   };
 
   const handleDateChange = (range: DateRange | undefined) => {
@@ -111,6 +155,16 @@ export function SearchFilters({
     }
   };
 
+  const handleSwapLocations = () => {
+    onFiltersChange({
+      ...filters,
+      originCode: filters.destinationCode,
+      originGeoId: filters.destinationGeoId,
+      destinationCode: filters.originCode,
+      destinationGeoId: filters.originGeoId
+    });
+  };
+
   const sortingOptions = [
     { value: 'PRICE_ASC', label: t('search.sorting.priceAsc') },
     { value: 'PRICE_DESC', label: t('search.sorting.priceDesc') },
@@ -127,7 +181,7 @@ export function SearchFilters({
   return (
     <Card className="mb-6 border-none shadow-lg">
       <CardContent className="pt-6" onKeyDown={handleKeyDown}>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 mb-4 items-end">
           {/* Origin */}
           <Autocomplete
             value={filters.originCode}
@@ -142,6 +196,30 @@ export function SearchFilters({
             onSearch={handleOriginSearch}
             placeholder={t('search.origin')}
           />
+
+          {/* Swap Button */}
+          <Button
+            type="button"
+            variant="outline"
+            onClick={handleSwapLocations}
+            className="h-10 w-10 shrink-0"
+            title={t('search.swapLocations')}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M7 16V4M7 4L3 8M7 4l4 4" />
+              <path d="M17 8v12m0 0l4-4m-4 4l-4-4" />
+            </svg>
+          </Button>
 
           {/* Destination */}
           <Combobox
@@ -158,7 +236,9 @@ export function SearchFilters({
             placeholder={t('search.destination')}
             emptyText={t('search.noAirports')}
           />
+        </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           {/* Sorting */}
           <Select
             value={filters.sorting}

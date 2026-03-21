@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { SearchFilters } from './components/SearchFilters';
 import { FlightGrid } from './components/FlightGrid';
+import { FlightPatternSummary } from './components/FlightPatternSummary';
 import { SearchHistory } from './components/SearchHistory';
 import { ThemeToggle } from './components/ThemeToggle';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
@@ -14,7 +15,7 @@ import {
   clearSearchHistory
 } from './utils/localStorage';
 import { enrichFaresWithImages } from './utils/fareEnrichment';
-import { formatDate } from './utils/dateUtils';
+import { formatDate, getDayOfWeek } from './utils/dateUtils';
 import type {
   SearchFilters as SearchFiltersType,
   SearchHistory as SearchHistoryType
@@ -98,6 +99,34 @@ function App() {
 
     return fares;
   }, [accumulatedFares, searchFilters]);
+
+  // Analyze day patterns from processed fares
+  const dayPatterns = useMemo(() => {
+    if (processedFares.length === 0) {
+      return { availableDays: [] };
+    }
+
+    const allDaysSet = new Set<number>();
+
+    processedFares.forEach((fare) => {
+      const depDay = getDayOfWeek(fare.departureDate);
+      const retDay = getDayOfWeek(fare.returnDate);
+
+      if (depDay >= 0) allDaysSet.add(depDay);
+      if (retDay >= 0) allDaysSet.add(retDay);
+    });
+
+    // Sort days (Monday first: 1,2,3,4,5,6,0)
+    const sortedDays = Array.from(allDaysSet).sort((a, b) => {
+      const aAdjusted = a === 0 ? 7 : a;
+      const bAdjusted = b === 0 ? 7 : b;
+      return aAdjusted - bAdjusted;
+    });
+
+    return {
+      availableDays: sortedDays
+    };
+  }, [processedFares]);
 
   const handleFiltersChange = (newFilters: SearchFiltersType) => {
     setSearchFilters(newFilters);
@@ -185,14 +214,12 @@ function App() {
           onFiltersChange={handleFiltersChange}
           onSearch={handleSearch}
         />
-
         {/* Search History */}
         <SearchHistory
           history={history}
           onSelectHistory={handleSelectHistory}
           onClearHistory={handleClearHistory}
         />
-
         {/* Error State */}
         {isError && (
           <div className="bg-destructive/10 border border-destructive text-destructive px-4 py-3 rounded-md mb-6">
@@ -202,6 +229,13 @@ function App() {
             </p>
           </div>
         )}
+        {!isLoading && processedFares.length > 0 && (
+          <FlightPatternSummary
+            availableDays={dayPatterns.availableDays}
+            totalFlights={processedFares.length}
+          />
+        )}
+        {/* 
 
         {/* Flight Grid */}
         <FlightGrid

@@ -8,6 +8,41 @@ export interface Airport {
 }
 
 export const airports: Airport[] = [
+  // Serbian & Regional Starting Points
+  {
+    geoId: '6299779',
+    value: 'BEG',
+    label: 'Beograd (BEG)',
+    countryIsoCode: 'RS',
+    cityName: 'Beograd',
+    imageUrl:
+      'https://serbia.com/wp-content/uploads/2024/11/iStock-2034929121-1-e1732627114701-1280x878.jpg'
+  },
+  {
+    geoId: '831372',
+    value: 'KVO',
+    label: 'Kraljevo (KVO)',
+    countryIsoCode: 'RS',
+    cityName: 'Kraljevo',
+    imageUrl: 'https://assets.airtrfx.com/media-em/ju/cities/KVO_Kraljevo.jpg'
+  },
+  {
+    geoId: '792680',
+    value: 'INI',
+    label: 'Niš (INI)',
+    countryIsoCode: 'RS',
+    cityName: 'Niš',
+    imageUrl: 'https://assets.airtrfx.com/media-em/ju/cities/INI_Nis.jpg'
+  },
+  {
+    geoId: '3220313',
+    value: 'TIV',
+    label: 'Tivat (TIV)',
+    countryIsoCode: 'ME',
+    cityName: 'Tivat',
+    imageUrl: 'https://assets.airtrfx.com/media-em/ju/cities/TIV_Tivat.jpg'
+  },
+
   // Top European Holiday Destinations
   {
     geoId: '3115882',
@@ -93,7 +128,9 @@ export const airports: Airport[] = [
     value: 'IST',
     label: 'Istanbul (IST)',
     countryIsoCode: 'TR',
-    cityName: 'Istanbul'
+    cityName: 'Istanbul',
+    imageUrl:
+      'https://images.imagerenderer.com/images/artworkimages/mediumlarge/2/istanbul-landscape-with-two-mosques-photo-by-bernardo-ricci-armani.jpg'
   },
   {
     geoId: '3215304',
@@ -149,7 +186,9 @@ export const airports: Airport[] = [
     value: 'NCE',
     label: 'Nica (NCE)',
     countryIsoCode: 'FR',
-    cityName: 'Nica'
+    cityName: 'Nica',
+    imageUrl:
+      'https://www.explorenicecotedazur.com/content/uploads/2021/11/Nice-capitale.jpg'
   },
   {
     geoId: '6299339',
@@ -308,13 +347,6 @@ export const airports: Airport[] = [
     label: 'Belfast (BHD)',
     countryIsoCode: 'GB',
     cityName: 'Belfast'
-  },
-  {
-    geoId: '6299779',
-    value: 'BEG',
-    label: 'Beograd (BEG)',
-    countryIsoCode: 'RS',
-    cityName: 'Beograd'
   },
   {
     geoId: '6296727',
@@ -549,13 +581,6 @@ export const airports: Airport[] = [
     cityName: 'Napulj'
   },
   {
-    geoId: '6299780',
-    value: 'INI',
-    label: 'Niš (INI)',
-    countryIsoCode: 'RS',
-    cityName: 'Niš'
-  },
-  {
     geoId: '6299777',
     value: 'OHD',
     label: 'Ohrid (OHD)',
@@ -652,7 +677,9 @@ export const airports: Airport[] = [
     value: 'SKG',
     label: 'Solun (SKG)',
     countryIsoCode: 'GR',
-    cityName: 'Solun'
+    cityName: 'Solun',
+    imageUrl:
+      'https://assets.airtrfx.com/media-em/ju/cities/SKG_Thessaloniki.jpg'
   },
   {
     geoId: '2725346',
@@ -676,14 +703,6 @@ export const airports: Airport[] = [
     cityName: 'Tirana'
   },
   {
-    geoId: '3220313',
-    value: 'TIV',
-    label: 'Tivat (TIV)',
-    countryIsoCode: 'ME',
-    cityName: 'Tivat',
-    imageUrl: 'https://assets.airtrfx.com/media-em/ju/cities/TIV_Tivat.jpg'
-  },
-  {
     geoId: '6299576',
     value: 'TRN',
     label: 'Torino (TRN)',
@@ -702,7 +721,8 @@ export const airports: Airport[] = [
     value: 'VLC',
     label: 'Valensija (VLC)',
     countryIsoCode: 'ES',
-    cityName: 'Valensija'
+    cityName: 'Valensija',
+    imageUrl: 'https://assets.airtrfx.com/media-em/ju/cities/VLC_Valencia.jpg'
   },
   {
     geoId: '6296786',
