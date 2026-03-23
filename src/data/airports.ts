@@ -652,6 +652,13 @@ export const airports: Airport[] = [
     cityName: 'Samos'
   },
   {
+    geoId: '6300971',
+    value: 'LED',
+    label: 'Sankt Peterburg (LED)',
+    countryIsoCode: 'RU',
+    cityName: 'Sankt Peterburg'
+  },
+  {
     geoId: '6299696',
     value: 'SJJ',
     label: 'Sarajevo (SJJ)',
@@ -694,6 +701,13 @@ export const airports: Airport[] = [
     label: 'Taljin (TLL)',
     countryIsoCode: 'EE',
     cityName: 'Taljin'
+  },
+  {
+    geoId: '6452621',
+    value: 'TBS',
+    label: 'Tbilisi (TBS)',
+    countryIsoCode: 'GE',
+    cityName: 'Tbilisi'
   },
   {
     geoId: '3183874',
