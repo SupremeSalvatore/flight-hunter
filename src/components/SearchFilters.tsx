@@ -10,7 +10,6 @@ import {
   SelectTrigger,
   SelectValue
 } from './ui/Select';
-import { Autocomplete, type AutocompleteOption } from './ui/Autocomplete';
 import { Combobox, type ComboboxOption } from './ui/Combobox';
 import { DateRangePicker } from './ui/DateRangePicker';
 import { searchAirports, airports } from '../data/airports';
@@ -30,16 +29,48 @@ export function SearchFilters({
   onSearch
 }: SearchFiltersProps) {
   const { t } = useTranslation();
-  const [originOptions, setOriginOptions] = useState<AutocompleteOption[]>([]);
+  const [originOptions, setOriginOptions] = useState<ComboboxOption[]>([]);
   const [destinationOptions, setDestinationOptions] = useState<
     ComboboxOption[]
   >([]);
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
 
-  // Load popular destinations on mount
+  // Load popular airports on mount for both origin and destination
   useEffect(() => {
     const popularAirports = airports.slice(0, 20);
-    let options = popularAirports.map((airport) => ({
+
+    // Origin options
+    let originOpts = popularAirports.map((airport) => ({
+      value: airport.value,
+      label: airport.label,
+      geoId: airport.geoId
+    }));
+
+    // Add selected origin if not in popular list
+    if (filters.originCode) {
+      const isInOptions = originOpts.some(
+        (opt) => opt.value === filters.originCode
+      );
+      if (!isInOptions) {
+        const selectedAirport = airports.find(
+          (airport) => airport.value === filters.originCode
+        );
+        if (selectedAirport) {
+          originOpts = [
+            {
+              value: selectedAirport.value,
+              label: selectedAirport.label,
+              geoId: selectedAirport.geoId
+            },
+            ...originOpts
+          ];
+        }
+      }
+    }
+    setOriginOptions(originOpts);
+
+    // Destination options
+    let destOpts = popularAirports.map((airport) => ({
       value: airport.value,
       label: airport.label,
       geoId: airport.geoId
@@ -47,12 +78,64 @@ export function SearchFilters({
 
     // Add selected destination if not in popular list
     if (filters.destinationCode) {
-      const isInOptions = options.some(
+      const isInOptions = destOpts.some(
         (opt) => opt.value === filters.destinationCode
       );
       if (!isInOptions) {
         const selectedAirport = airports.find(
           (airport) => airport.value === filters.destinationCode
+        );
+        if (selectedAirport) {
+          destOpts = [
+            {
+              value: selectedAirport.value,
+              label: selectedAirport.label,
+              geoId: selectedAirport.geoId
+            },
+            ...destOpts
+          ];
+        }
+      }
+    }
+
+    setDestinationOptions(destOpts);
+  }, [filters.originCode, filters.destinationCode]);
+
+  const handleInputChange = (field: keyof SearchFiltersType, value: string) => {
+    onFiltersChange({
+      ...filters,
+      [field]: value || undefined
+    });
+  };
+
+  const handleOriginSearch = (query: string) => {
+    let options: ComboboxOption[] = [];
+
+    if (query.length >= 2) {
+      const results = searchAirports(query);
+      options = results.map((airport) => ({
+        value: airport.value,
+        label: airport.label,
+        geoId: airport.geoId
+      }));
+    } else {
+      // Show popular airports when query is cleared
+      const popularAirports = airports.slice(0, 20);
+      options = popularAirports.map((airport) => ({
+        value: airport.value,
+        label: airport.label,
+        geoId: airport.geoId
+      }));
+    }
+
+    // Always include selected origin if not in results
+    if (filters.originCode) {
+      const isInOptions = options.some(
+        (opt) => opt.value === filters.originCode
+      );
+      if (!isInOptions) {
+        const selectedAirport = airports.find(
+          (airport) => airport.value === filters.originCode
         );
         if (selectedAirport) {
           options = [
@@ -67,29 +150,7 @@ export function SearchFilters({
       }
     }
 
-    setDestinationOptions(options);
-  }, [filters.destinationCode]);
-
-  const handleInputChange = (field: keyof SearchFiltersType, value: string) => {
-    onFiltersChange({
-      ...filters,
-      [field]: value || undefined
-    });
-  };
-
-  const handleOriginSearch = (query: string) => {
-    if (query.length >= 2) {
-      const results = searchAirports(query);
-      setOriginOptions(
-        results.map((airport) => ({
-          value: airport.value,
-          label: airport.label,
-          geoId: airport.geoId
-        }))
-      );
-    } else {
-      setOriginOptions([]);
-    }
+    setOriginOptions(options);
   };
 
   const handleDestinationSearch = (query: string) => {
@@ -183,7 +244,7 @@ export function SearchFilters({
       <CardContent className="pt-6" onKeyDown={handleKeyDown}>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 mb-4 items-end">
           {/* Origin */}
-          <Autocomplete
+          <Combobox
             value={filters.originCode}
             onChange={(value, geoId) => {
               onFiltersChange({
@@ -195,31 +256,35 @@ export function SearchFilters({
             options={originOptions}
             onSearch={handleOriginSearch}
             placeholder={t('search.origin')}
+            emptyText={t('search.noAirports')}
           />
 
-          {/* Swap Button */}
-          <Button
-            type="button"
-            variant="outline"
-            onClick={handleSwapLocations}
-            className="h-10 w-10 shrink-0"
-            title={t('search.swapLocations')}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          {/* Swap Button - Centered for both mobile and desktop */}
+          <div className="flex justify-center">
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={handleSwapLocations}
+              className="h-10 w-10 p-0 shrink-0"
+              title={t('search.swapLocations')}
             >
-              <path d="M7 16V4M7 4L3 8M7 4l4 4" />
-              <path d="M17 8v12m0 0l4-4m-4 4l-4-4" />
-            </svg>
-          </Button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M7 16V4M7 4L3 8M7 4l4 4" />
+                <path d="M17 8v12m0 0l4-4m-4 4l-4-4" />
+              </svg>
+            </Button>
+          </div>
 
           {/* Destination */}
           <Combobox

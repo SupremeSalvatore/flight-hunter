@@ -119,6 +119,7 @@ const GET_STANDARD_FARE_MODULE = `query GetStandardFareModule($page: PageInput!,
       formattedDepartureDate
       returnDate
       formattedReturnDate
+      formattedReturnDate
       flightType
       formattedFlightType
       formattedAdditionalFeesAmount

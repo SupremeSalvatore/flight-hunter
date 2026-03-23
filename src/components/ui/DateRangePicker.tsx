@@ -32,11 +32,11 @@ export function DateRangePicker({
           <Button
             variant="outline"
             className={cn(
-              'w-full justify-start text-left font-normal',
+              'justify-start px-2.5 font-normal text-sm',
               !dateRange && 'text-muted-foreground'
             )}
           >
-            <CalendarIcon className="mr-2 h-4 w-4" />
+            <CalendarIcon size={18} />
             {dateRange?.from ? (
               <>
                 {dateRange.to ? (

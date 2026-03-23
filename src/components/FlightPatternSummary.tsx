@@ -24,8 +24,8 @@ export function FlightPatternSummary({
   return (
     <Card className="mb-6 border-blue-200 bg-blue-50 dark:bg-blue-950 dark:border-blue-800">
       <CardContent className="pt-4 pb-4">
-        <div className="flex items-start gap-3">
-          <Calendar className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5 shrink-0" />
+        <div className="flex items-center gap-3">
+          <Calendar className="h-5 w-5 text-blue-600 dark:text-blue-400 shrink-0" />
           <div className="flex-1">
             <div className="flex items-baseline gap-2 flex-wrap">
               <span className="text-sm text-blue-700 dark:text-blue-300 font-medium">
