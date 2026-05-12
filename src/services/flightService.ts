@@ -7,8 +7,22 @@ import type {
 
 const API_URL = 'https://vg-api.airtrfx.com/graphql';
 
-// Initialize GraphQL client
-export const graphQLClient = new GraphQLClient(API_URL);
+// Bearer token from Air Serbia website
+// Note: This token may expire and need to be refreshed
+const AUTH_TOKEN =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJleHAiOjE3Nzg2NzExODMsImlhdCI6MTc3ODQ5ODM4MywianRpIjoiYjc3MmQyMTEyMDU1ZDMwMTYxNzFmZDg4MTBhYzhiMzlhNTk5OGI5MTllODJhNGM1NzkzNmRiNDEyNWVlNDk0YSIsIm9tX3Njb3BlIjoiNmVoSzhMYmh6SkJmeUJmenhNZnFIYjRCVXNYWXlheEF3TElSWm5IVEVNQ0lqc3VRQUhtNXFYTEZBNng3RmFzeHhjOHFLWHFJdGwwQnlrS1Zvdm40aXJIaXk3Z3FDangwTVFKc24xV0NKcFRLY0ZkNW9FYnlXeUF4NHo1X2NhYkdBMTNnIn0.vqVyZrtf-Y7Za0ERH6mfmb5kfHSIz8XvmAK1UiDQgRQ';
+
+// Initialize GraphQL client with authentication headers
+export const graphQLClient = new GraphQLClient(API_URL, {
+  headers: {
+    authorization: `Bearer ${AUTH_TOKEN}`,
+    origin: 'https://www.airserbia.com',
+    referer: 'https://www.airserbia.com/sr-latn/avio-karte-iz-beograda',
+    accept: '*/*',
+    'accept-language': 'en-US,en;q=0.9',
+    'content-type': 'application/json'
+  }
+});
 
 // GraphQL query string - exact copy from working API payload
 const GET_STANDARD_FARE_MODULE = `query GetStandardFareModule($page: PageInput!, $id: String!, $pageNumber: Int, $limit: Int, $flatContext: FlatContextInput, $urlParameters: StandardFareModuleUrlParameters, $filters: StandardFareModuleFiltersInput, $nearestOriginAirport: AirportInput) {
@@ -60,14 +74,20 @@ const GET_STANDARD_FARE_MODULE = `query GetStandardFareModule($page: PageInput!,
     }
     sortingFilterValues
     filterRestrictions {
-      origin {
+      originRestrictions {
         geoId
-        type
+        cityGeoId
+        countryGeoId
+        regionGeoId
+        tagId
         __typename
       }
-      destination {
+      destinationRestrictions {
         geoId
-        type
+        cityGeoId
+        countryGeoId
+        regionGeoId
+        tagId
         __typename
       }
       __typename
@@ -118,7 +138,6 @@ const GET_STANDARD_FARE_MODULE = `query GetStandardFareModule($page: PageInput!,
       departureDate
       formattedDepartureDate
       returnDate
-      formattedReturnDate
       formattedReturnDate
       flightType
       formattedFlightType
@@ -194,13 +213,12 @@ export async function fetchFlights({
     page: {
       tenant: 'ju',
       slug: 'avio-karte-iz-beograda',
-      siteEdition: 'sr-latn-rs'
+      siteEdition: 'sr-latn' // Fixed: was 'sr-latn-rs'
     },
     id: '652cf44673919744a40dd553',
     pageNumber,
     limit,
     flatContext: {
-      siteEditionCountryGeoId: '6290252',
       templateId: '63ef2127aa30db1d00000247',
       templateName: 'from-city',
       originLocationLevel: 'City',
